@@ -1,0 +1,6 @@
+{
+  "name": "Smart Lens AR - Shop & View",
+  "description": "An AR discovery app that identifies actors and fashion products in real-time, providing deep career insights and instant links to Naver Shopping.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["Product recognition", "Naver Shopping search", "Actor profiling"]
+}

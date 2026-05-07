@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-obsidian: #050505;
+  --color-cyan-glow: #00ffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-obsidian);
+  color: #fff;
+  font-family: var(--font-sans);
+  user-select: none;
+}
+
+/* Elegant Scanline Animation */
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 0.5; }
+  80% { opacity: 0.5; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-cyan-glow), transparent);
+  box-shadow: 0 0 20px var(--color-cyan-glow);
+  pointer-events: none;
+  animation: scan-line 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 50;
+}
+
+/* Reticle pulsing */
+@keyframes reticle-pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.reticle-pulse {
+  animation: reticle-pulse 2s ease-in-out infinite;
+}
+
